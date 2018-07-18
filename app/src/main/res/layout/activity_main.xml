@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@color/textColor">
+    <!---->
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroudColor">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/MediumText" />
+    </Toolbar>
+
+    <LinearLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="50dp"
+        android:orientation="vertical"
+        android:weightSum="7">
+
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:text="QUESTIONS"
+            android:textColor="@color/backgroudColor"
+            android:textSize="@dimen/MediumText" />
+
+        <LinearLayout
+            android:id="@+id/feild1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/but1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_radio_button_unchecked_black_24dp"
+                android:text="@string/a"
+                android:textColor="@color/backgroudColor"
+                android:textSize="@dimen/SmallText" />
+
+
+            <TextView
+                android:id="@+id/opt1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text=""
+                android:textColor="@color/backgroudColor"
+                android:textSize="@dimen/SmallText" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/but2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_radio_button_unchecked_black_24dp"
+                android:text="@string/b"
+                android:textColor="@color/backgroudColor"
+                android:textSize="@dimen/SmallText" />
+
+            <TextView
+                android:id="@+id/opt2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text=""
+                android:textColor="@color/backgroudColor"
+                android:textSize="@dimen/SmallText" />
+            />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/but3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_radio_button_unchecked_black_24dp"
+                android:text="@string/c"
+                android:textColor="@color/backgroudColor"
+                android:textSize="@dimen/SmallText" />
+
+            <TextView
+                android:id="@+id/opt3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text=""
+                android:textColor="@color/backgroudColor"
+                android:textSize="@dimen/SmallText" />
+            />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/but4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_radio_button_unchecked_black_24dp"
+                android:text="@string/d"
+                android:textColor="@color/backgroudColor"
+                android:textSize="@dimen/SmallText" />
+
+            <TextView
+                android:id="@+id/opt4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text=""
+                android:textColor="@color/backgroudColor"
+                android:textSize="@dimen/SmallText" />
+            />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/nextBt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="@string/next_question"
+            android:textSize="@dimen/MediumText" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

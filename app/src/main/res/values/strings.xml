@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name"> Quizz App</string>
+    <string name="select_quiz">Select Your Quiz</string>
+    <string name="powered_by">Powered By Pal\'s Educations</string>
+    <string name="gk_quiz">Computer Quiz</string>
+    <string name="other_quiz">Others</string>
+    <string name="next_question">Next Question</string>
+    <string name="a">A</string>
+    <string name="b">B</string>
+    <string name="c">C</string>
+    <string name="d">D</string>
+</resources>
