@@ -9,4 +9,5 @@
     <string name="b">B</string>
     <string name="c">C</string>
     <string name="d">D</string>
+    <string name="hint">Enter your answer here</string>
 </resources>

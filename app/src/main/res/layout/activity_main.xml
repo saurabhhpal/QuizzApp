@@ -43,121 +43,178 @@
             android:textColor="@color/backgroudColor"
             android:textSize="@dimen/MediumText" />
 
+        <!--<LinearLayout-->
+            <!--android:id="@+id/feild1"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_weight="1"-->
+            <!--android:orientation="horizontal">-->
+
+
+            <!--<Button-->
+                <!--android:id="@+id/but1"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:background="@drawable/ic_radio_button_unchecked_black_24dp"-->
+                <!--android:text="@string/a"-->
+                <!--android:textColor="@color/backgroudColor"-->
+                <!--android:textSize="@dimen/SmallText" />-->
+
+
+            <!--<TextView-->
+                <!--android:id="@+id/opt1"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:text=""-->
+                <!--android:textColor="@color/backgroudColor"-->
+                <!--android:textSize="@dimen/SmallText" />-->
+
+
+        <!--</LinearLayout>-->
+
         <LinearLayout
-            android:id="@+id/feild1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:layout_weight="2">
 
-
-            <Button
-                android:id="@+id/but1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/ic_radio_button_unchecked_black_24dp"
-                android:text="@string/a"
-                android:textColor="@color/backgroudColor"
-                android:textSize="@dimen/SmallText" />
-
-
-            <TextView
-                android:id="@+id/opt1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text=""
-                android:textColor="@color/backgroudColor"
-                android:textSize="@dimen/SmallText" />
-
-
-        </LinearLayout>
-
-
-        <LinearLayout
+        <RadioGroup
+            android:id="@+id/select_opt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+           >
 
-            <Button
-                android:id="@+id/but2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/ic_radio_button_unchecked_black_24dp"
-                android:text="@string/b"
-                android:textColor="@color/backgroudColor"
-                android:textSize="@dimen/SmallText" />
+        <RadioButton
+            android:id="@+id/opt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SA"
+            android:background="@color/backgroudColor"
+            />
 
-            <TextView
+            <RadioButton
                 android:id="@+id/opt2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text=""
-                android:textColor="@color/backgroudColor"
-                android:textSize="@dimen/SmallText" />
-            />
-        </LinearLayout>
+                android:text="SA"
+                android:background="@color/backgroudColor"
+                />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/but3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/ic_radio_button_unchecked_black_24dp"
-                android:text="@string/c"
-                android:textColor="@color/backgroudColor"
-                android:textSize="@dimen/SmallText" />
-
-            <TextView
+            <RadioButton
                 android:id="@+id/opt3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text=""
-                android:textColor="@color/backgroudColor"
-                android:textSize="@dimen/SmallText" />
-            />
+                android:text="SA"
+                android:background="@color/backgroudColor"
+                />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/but4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/ic_radio_button_unchecked_black_24dp"
-                android:text="@string/d"
-                android:textColor="@color/backgroudColor"
-                android:textSize="@dimen/SmallText" />
-
-            <TextView
+            <RadioButton
                 android:id="@+id/opt4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text=""
-                android:textColor="@color/backgroudColor"
-                android:textSize="@dimen/SmallText" />
+                android:text="SA"
+                android:background="@color/backgroudColor"
+                />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/txt_ans"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint"
+            android:background="@color/backgroudColor"
+            android:visibility="gone"
             />
 
+
         </LinearLayout>
+
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<Button-->
+                <!--android:id="@+id/but2"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:background="@drawable/ic_radio_button_unchecked_black_24dp"-->
+                <!--android:text="@string/b"-->
+                <!--android:textColor="@color/backgroudColor"-->
+                <!--android:textSize="@dimen/SmallText" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/opt2"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:text=""-->
+                <!--android:textColor="@color/backgroudColor"-->
+                <!--android:textSize="@dimen/SmallText" />-->
+            <!--/>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<Button-->
+                <!--android:id="@+id/but3"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:background="@drawable/ic_radio_button_unchecked_black_24dp"-->
+                <!--android:text="@string/c"-->
+                <!--android:textColor="@color/backgroudColor"-->
+                <!--android:textSize="@dimen/SmallText" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/opt3"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:text=""-->
+                <!--android:textColor="@color/backgroudColor"-->
+                <!--android:textSize="@dimen/SmallText" />-->
+            <!--/>-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<Button-->
+                <!--android:id="@+id/but4"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:background="@drawable/ic_radio_button_unchecked_black_24dp"-->
+                <!--android:text="@string/d"-->
+                <!--android:textColor="@color/backgroudColor"-->
+                <!--android:textSize="@dimen/SmallText" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/opt4"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:text=""-->
+                <!--android:textColor="@color/backgroudColor"-->
+                <!--android:textSize="@dimen/SmallText" />-->
+            <!--/>-->
+
+        <!--</LinearLayout>-->
 
         <Button
             android:id="@+id/nextBt"

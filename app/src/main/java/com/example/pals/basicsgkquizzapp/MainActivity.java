@@ -1,23 +1,23 @@
 package com.example.pals.basicsgkquizzapp;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 
 public class MainActivity extends AppCompatActivity {
-    Button button1, buttonA, buttonB, buttonC, buttonD;
+    Button button1;
+    EditText editText;
+//            , buttonA, buttonB, buttonC, buttonD;
+    RadioGroup radioGroup ;
+    RadioButton radioButton;
     String showScore = "SHOW SCORE";
     int counter = 0;
     private static final int MAX = 10;
@@ -111,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
             "f is a simple declaration of pointer variable."
     };
 
+
+
     String[] resultList = new String[]{
             "B",
             "B",
@@ -133,153 +135,143 @@ public class MainActivity extends AppCompatActivity {
 
         button1 = findViewById(R.id.nextBt);
         button1.setText("NEXT ");
-        buttonA = findViewById(R.id.but1);
-        buttonB = findViewById(R.id.but2);
-        buttonC = findViewById(R.id.but3);
-        buttonD = findViewById(R.id.but4);
 
+//        buttonA = findViewById(R.id.but1);
+//        buttonB = findViewById(R.id.but2);
+//        buttonC = findViewById(R.id.but3);
+//        buttonD = findViewById(R.id.but4);
 
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                buttonA.setEnabled(true);
-                buttonB.setEnabled(true);
-                buttonC.setEnabled(true);
-                buttonD.setEnabled(true);
-                populate_questions();
-                pressed = false;
+        radioGroup =  findViewById(R.id.select_opt);
 
+        if(counter == MAX-1){
+            populate_questions();
+            editText = findViewById(R.id.txt_ans);
+            button1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if( editText.getText().toString().trim().equals("f is a function pointer")){
+                       score+=1;
+                }
             }
-        });
+            });
+        }else {
+                button1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        int selectedId = radioGroup.getCheckedRadioButtonId();
+                        radioButton = findViewById(selectedId);
+//                if(counter == MAX-1){
+//                   editText = findViewById(R.id.txt_ans);
+//                   if( editText.getText().toString().trim().equals("f is a function pointer")){
+////                       score+=1;
+//                    }
+//                }else {
+                        buttonPress(selectedId);
+                        populate_questions();
+                        pressed = false;
+//                }
+                    }
+                });
+
+
+//        }
+//        else {
+//            buttonPress(selectedId);
+//            populate_questions();
+//            pressed = false;
+        }
+
         populate_questions();
 
-        buttonA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Option A selected", Toast.LENGTH_SHORT).show();
-                buttonPress(view);
-//                fillColors(buttonA.getId() , counter);
-            }
-        });
-
-
-        buttonB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Option B selected", Toast.LENGTH_SHORT).show();
-                buttonPress(view);
-//                fillColors(buttonA.getId() , counter);
-            }
-        });
-
-
-        buttonC.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Option C selected", Toast.LENGTH_SHORT).show();
-                buttonPress(view);
-//                fillColors(buttonA.getId() , counter);
-            }
-        });
-
-
-        buttonD.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Option D selected", Toast.LENGTH_SHORT).show();
-                buttonPress(view);
-//                fillColors(buttonA.getId() , counter);
-            }
-        });
     }
 
     int showAnswer;
 
-    public int buttonPress(View v) {
+    public  void buttonPress(int  rb) {
+            switch (rb) {
+                case R.id.opt1:
 
-        if (pressed) {
-            Toast.makeText(this, "You can not choose other options", Toast.LENGTH_LONG).show();
-            buttonA.setEnabled(false);
-            buttonB.setEnabled(false);
-            buttonC.setEnabled(false);
-            buttonD.setEnabled(false);
-        } else
-            switch (v.getId()) {
-                case R.id.but1:
-
-                    fillColors(R.id.but1, counter);
+                    fillColors(R.id.opt1);
                     break;
-                case R.id.but2:
+                case R.id.opt2:
 
-                    fillColors(R.id.but2, counter);
+                    fillColors(R.id.opt2);
                     break;
-                case R.id.but3:
+                case R.id.opt3:
 
-                    fillColors(R.id.but3, counter);
+                    fillColors(R.id.opt3);
                     break;
-                case R.id.but4:
+                case R.id.opt4:
 
-                    fillColors(R.id.but4, counter);
+                    fillColors(R.id.opt4);
                     break;
             }
-        return v.getId();
+//        return v.getId();
     }
 
     int score = 0;
     boolean pressed = false;
 
-    public void fillColors(int buttonId, int counter) {
+    public void fillColors(int buttonId) {
 //        Toast.makeText(getApplicationContext(), "INSIDE FILL COLORS " + counter, Toast.LENGTH_SHORT).show();
 //        Toast.makeText(getApplicationContext(), "Selected button " + (buttonId) + " BUTTON 2 " + R.id.but2, Toast.LENGTH_LONG).show();
 //        Toast.makeText(getApplicationContext(), "Selected button "+R.id.but2, Toast.LENGTH_LONG).show();
         switch (buttonId) {
 
-            case R.id.but2:
+            case R.id.opt2:
                 if (counter == 1 || counter == 2 || counter == 4 || counter == 5 || counter == 6) {
                     score = score + 1;
-                    buttonB.setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_green_24dp));
-
-                } else {
-                    findViewById(buttonId).setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_red_24dp));
+//                    radioButton.setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_green_24dp));
+//
+//                } else {
+//                    radioButton.setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_red_24dp));
 
 
                 }
                 pressed = true;
+
+                radioButton.setChecked(false);
                 break;
 
 
-            case R.id.but1:
+            case R.id.opt1:
                 if (counter == 8) {
                     score = score + 1;
-                    buttonA.setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_green_24dp));
-                } else {
-                    findViewById(buttonId).setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_red_24dp));
+//                    radioButton.setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_green_24dp));
+//                } else {
+//                    radioButton.setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_red_24dp));
                 }
+
+                radioButton.setChecked(false);
                 pressed = true;
                 break;
 
 
-            case R.id.but3:
+            case R.id.opt3:
 
                 if (counter == 9 || counter == 10) {
                     score = score + 1;
-                    buttonD.setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_green_24dp));
-                } else
-                    findViewById(buttonId).setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_red_24dp));
+//                   radioButton.setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_green_24dp));
+//                } else
+//                    radioButton.setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_red_24dp));
 
+                }
 
+                radioButton.setChecked(false);
                 pressed = true;
 
                 break;
 
-            case R.id.but4:
+            case R.id.opt4:
                 if (counter == 3 || counter == 7) {
-                    score = score + 1;
-                    buttonD.setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_green_24dp));
-                } else {
-
-                    findViewById(buttonId).setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_red_24dp));
+//                    score = score + 1;
+//                   radioButton.setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_green_24dp));
+//                } else {
+//
+//                    radioButton.setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_red_24dp));
                 }
+
+                radioButton.setChecked(false);
 
                 pressed = true;
                 break;
@@ -297,18 +289,28 @@ public class MainActivity extends AppCompatActivity {
         TextView tvB = findViewById(R.id.opt2);
         TextView tvC = findViewById(R.id.opt3);
         TextView tvD = findViewById(R.id.opt4);
-        buttonA.setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_black_24dp));
-        buttonB.setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_black_24dp));
-        buttonC.setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_black_24dp));
-        buttonD.setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_black_24dp));
-        buttonA.setVisibility(View.VISIBLE);
-        buttonB.setVisibility(View.VISIBLE);
-        buttonC.setVisibility(View.VISIBLE);
-        buttonD.setVisibility(View.VISIBLE);
+//        buttonA.setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_black_24dp));
+//        buttonB.setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_black_24dp));
+//        buttonC.setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_black_24dp));
+//        buttonD.setBackground(getDrawable(R.drawable.ic_radio_button_unchecked_black_24dp));
+//        buttonA.setVisibility(View.VISIBLE);
+//        buttonB.setVisibility(View.VISIBLE);
+//        buttonC.setVisibility(View.VISIBLE);
+//        buttonD.setVisibility(View.VISIBLE);
         tvA.setVisibility(View.VISIBLE);
         tvB.setVisibility(View.VISIBLE);
         tvC.setVisibility(View.VISIBLE);
         tvD.setVisibility(View.VISIBLE);
+
+        if(counter == MAX-1){
+            tvA.setVisibility(View.INVISIBLE);
+            tvB.setVisibility(View.INVISIBLE);
+            tvC.setVisibility(View.INVISIBLE);
+            tvD.setVisibility(View.INVISIBLE);
+            editText.setVisibility(View.VISIBLE);
+
+
+        }else
 
 
         if (counter < MAX) {
@@ -462,16 +464,17 @@ public class MainActivity extends AppCompatActivity {
             button1.setText(showScore);
             ques.setText("You scored " + score * 10 + "%");
             ques.setTextSize(getResources().getDimension(R.dimen.LargeText));
-            buttonA.setVisibility(View.GONE);
-            buttonB.setVisibility(View.GONE);
-            buttonC.setVisibility(View.GONE);
-            buttonD.setVisibility(View.GONE);
+//            buttonA.setVisibility(View.GONE);
+//            buttonB.setVisibility(View.GONE);
+//            buttonC.setVisibility(View.GONE);
+//            buttonD.setVisibility(View.GONE);
             findViewById(R.id.opt1).setVisibility(View.GONE);
             findViewById(R.id.opt2).setVisibility(View.GONE);
             findViewById(R.id.opt3).setVisibility(View.GONE);
             findViewById(R.id.opt4).setVisibility(View.GONE);
+            findViewById(R.id.txt_ans).setVisibility(View.INVISIBLE);
             button1.setText("START AGAIN");
-
+            score=0;
 //            button1.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View view) {
